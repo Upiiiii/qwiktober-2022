@@ -20,13 +20,14 @@ export const ProfileCard = component$(
     image,
     githubUsername,
     instagramUsername,
-    linkedinUsername,
+    linkedinUsername
   }: ProfileCardProps) => {
     return (
       <>
         <div class="biography-card" data-aos="fade-up" data-aos-duration="2000">
           <figure>
             <img
+              loading="lazy"
               src={
                 image
                   ? image
@@ -41,6 +42,7 @@ export const ProfileCard = component$(
           <h3>{fullname}</h3>
           <div class="contact">
             <a
+              aria-label={`Github profile link of ${fullname}`}
               class="social-media"
               href={`https://www.github.com/${githubUsername}`}
               target="_blank"
@@ -50,6 +52,7 @@ export const ProfileCard = component$(
             </a>
             {instagramUsername && (
               <a
+                aria-label={`Instagram profile link of ${fullname}`}
                 class="social-media"
                 href={`https://www.instagram.com/${instagramUsername}`}
                 target="_blank"
@@ -60,6 +63,7 @@ export const ProfileCard = component$(
             )}
             {linkedinUsername && (
               <a
+                aria-label={`Linkedin profile link of ${fullname}`}
                 class="social-media"
                 href={`https://www.linkedin.com/in/${linkedinUsername}`}
                 target="_blank"
